@@ -1,9 +1,9 @@
-package Ejercicio33;
+package Ejercicio34;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio33 {
+public class Ejercicio34 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,36 +11,32 @@ public class Ejercicio33 {
 		//	DECLARACIÓN DE VARIABLE
 		int[] array = {4,5,6,7,2};
 		int[] arrayCambiado;
-		int introDato=0;
 		int posicion=0;
 		
 		mostrarArray(array);
 		
-		introDato=entradaTeclado("Introduzca un nuevo digito: ");
 		do{
-			posicion=entradaTeclado("Introduzca la posicion: ");
+			posicion=entradaTeclado("\n¿Que posicion desea eliminar?: ");
 			
 		} while(posicion>array.length || posicion<=0);
 		posicion-=1;
 		
-		arrayCambiado=insertarArray(array, introDato, posicion);
+		arrayCambiado=resizeArray(eliminarDeArray(array, posicion));
 		mostrarArray(arrayCambiado);
 
 	}
 	
-	public static int[] insertarArray(int[]a, int b, int c){
+	public static int[] eliminarDeArray(int[]a, int b){
 		
-		int[] nuevoArray=resizeArray(a);
-		int cambio;
-		int aux;
+		int[] nuevoArray=Arrays.copyOf(a, a.length);
+		int cambio=0;
 		boolean end=false;
 		
 		for(int i=0; i<nuevoArray.length && !end; i++){
-			if(c==i){
-				for(int j=i; j<nuevoArray.length; j++){
-					aux=nuevoArray[j];
-					nuevoArray[j]=b;
-					b=aux;
+			if(b==i){
+				for(int j=i; j<nuevoArray.length-1; j++){
+					nuevoArray[j]=nuevoArray[j+1];
+					nuevoArray[j+1]=cambio;
 				}
 				end=true;
 			}
@@ -51,7 +47,7 @@ public class Ejercicio33 {
 	
 	public static int[] resizeArray(int[]a){
 		
-		int[] arrayAux=Arrays.copyOf(a, a.length+1);
+		int[] arrayAux=Arrays.copyOf(a, a.length-1);
 		return arrayAux;
 	}
 	
@@ -60,11 +56,11 @@ public class Ejercicio33 {
 		Scanner sc=new Scanner(System.in);
 		
 		String aux;
-		int dato;
+		int dato=0;
 		boolean error=false;
 		
 		do{
-			System.out.println(cadena);
+			System.out.print(cadena);
 			aux=sc.nextLine();
 			
 			error=comprobarDato(aux);
@@ -98,3 +94,4 @@ public class Ejercicio33 {
 	}
 
 }
+
