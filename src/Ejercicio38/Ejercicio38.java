@@ -13,17 +13,17 @@ public class Ejercicio38 {
 		//	Mostrar array principal.
 		mostrarArray(arrayBasico);
 		//	Mostrar subarray.
-		mostrarArray(subArray2(arrayBasico));
+		mostrarArray(subArray(arrayBasico));
 
 	}
-	public static int[] subArray2(int[] a){
-		
-		int indice1=entradaTeclado("Introduce el primer indice: ")-1;	// Indice inicial.
-		int indice2=entradaTeclado("Introduce el indice final: ");		// Indice final.
-		
-		int[] subArray=Arrays.copyOfRange(a, indice1, indice2);
-		return subArray;
-	}
+//	public static int[] subArray2(int[] a){
+//		
+//		int indice1=entradaTeclado("Introduce el primer indice: ")-1;	// Indice inicial.
+//		int indice2=entradaTeclado("Introduce el indice final: ");		// Indice final.
+//		
+//		int[] subArray=Arrays.copyOfRange(a, indice1, indice2);
+//		return subArray;
+//	}
 	
 	public static int[] subArray(int[] a){
 		
