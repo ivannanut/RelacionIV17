@@ -1,14 +1,14 @@
 package Ejercicio34;
 
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Scanner;//pene
 
 public class Ejercicio34 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//	DECLARACIÓN DE VARIABLE
+		//	DECLARACIÃ“N DE VARIABLE
 		int[] array = {4,5,6,7,2};
 		int[] arrayCambiado;
 		int posicion=0;
@@ -16,7 +16,7 @@ public class Ejercicio34 {
 		mostrarArray(array);
 		
 		do{
-			posicion=entradaTeclado("\n¿Que posicion desea eliminar?: ");
+			posicion=entradaTeclado("\nÂ¿Que posicion desea eliminar?: ");
 			
 		} while(posicion>array.length || posicion<=0);
 		posicion-=1;
